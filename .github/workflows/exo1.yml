@@ -3,9 +3,24 @@ on:
   push:
     branches:
       - main
+
 jobs:
   ouvrir-restaurant:
     runs-on: ubuntu-latest
     steps:
+      - name: recup le code
+        uses: actions/checkout@v4
+
+      - name: intall Node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Vérifier les tests
+        run: npm test
+
       - name: mess
         run: echo "le restaurant est ouvert"
