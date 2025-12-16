@@ -19,6 +19,9 @@ jobs:
       - name: Installer les dépendances
         run: npm install
 
+      - name: verifier le code
+        run: npx eslint .
+
       - name: Vérifier les tests
         run: npm test
 
