@@ -1,0 +1,17 @@
+# Dépendances Node
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers de couverture Jest
+coverage/
+
+# Variables d’environnement
+.env
+
+# Fichiers système
+.DS_Store
+Thumbs.db
