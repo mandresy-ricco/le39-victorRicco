@@ -7,6 +7,11 @@ on:
 jobs:
   ouvrir-restaurant:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
     steps:
       - name: recup le code
         uses: actions/checkout@v4
@@ -14,7 +19,7 @@ jobs:
       - name: intall Node js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{matrix.node-version}}
 
       - name: Installer les dépendances
         run: npm install
