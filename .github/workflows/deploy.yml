@@ -64,16 +64,13 @@ jobs:
         run: |
           curl --fail https://mandresy-ricco.github.io/le39-victorRicco/index.html || exit 1
           echo "Le restaurant est ouvert !"
-            - name: Notification de livraison
 
       - name: Notification de livraison
         run: |
           echo "Livraison effectuée avec succès"
           echo "URL du site https://mandresy-ricco.github.io/le39-victorRicco/index.html"
           echo "Date du déploiement $(date -u)"
-          echo "Déployé par  ${{ github.actor }}"
-          echo "Commit  ${{ github.sha }}"
-          echo "Message du commit  ${{ github.event.head_commit.message }}"
-          echo "Branche  ${{ github.ref_name }}"
-
-
+          echo "Déployé par ${{ github.actor }}"
+          echo "Commit ${{ github.sha }}"
+          echo "Message du commit ${{ github.event.head_commit.message }}"
+          echo "Branche ${{ github.ref_name }}"
