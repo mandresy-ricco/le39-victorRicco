@@ -56,3 +56,12 @@ jobs:
       - name: Déployer sur GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Attendre que le site soit prêt
+        run: sleep 30
+
+      - name: Vérifier que le restaurant est ouvert
+        run: |
+          curl --fail https://mandresy-ricco.github.io/le39-victorRicco/index.html || exit 1
+          echo "Le restaurant est ouvert !"
+
